@@ -20,6 +20,14 @@ class AuthController extends Controller {
 
 	use AuthenticatesAndRegistersUsers;
 
+    /**
+     * Where to redirect users after login / registration.
+     *
+     * @var string
+     */
+    // protected $redirectPath = '/dashboard';
+
+
 	/**
 	 * Create a new authentication controller instance.
 	 *
@@ -33,6 +41,32 @@ class AuthController extends Controller {
 		$this->registrar = $registrar;
 
 		$this->middleware('guest', ['except' => 'getLogout']);
+	}
+
+	/**
+	 * Log the user out of the application.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getLogout()
+	{
+		$this->auth->logout();
+
+		return redirect('/auth/login');
+	}
+
+	/**
+	 * Get the post register / login redirect path.
+	 *
+	 * @return string
+	 */
+	public function redirectPath()
+	{
+		if (property_exists($this, 'redirectPath'))
+		{
+			return $this->redirectPath;
+		}
+		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/admin/dashboard';
 	}
 
 }
