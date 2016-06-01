@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<title>Movie theater - @yield('subtitle', 'Administration')</title>
 
 	<!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
@@ -112,7 +112,7 @@
 	<script src="{{ asset('/dist/js/demo.js') }}"></script>
 
 	<script type="text/javascript">
-	// auto close alert success
+	    // auto close alert success
 		$(".alert-success").fadeTo(5000, 500).slideUp(500, function(){
 		    $(".alert-success").alert('close');
 		});

@@ -43,4 +43,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'backend', 'middleware' => 'au
         Route::any('edit/{id}', array('as' => 'performance-edit', 'uses' => 'PerformanceController@anyEdit'));
         Route::get('delete/{id}', array('as' => 'performance-delete', 'uses' => 'PerformanceController@delete'));
     });
+
+    Route::group(['prefix' => 'screen'], function() {
+        Route::get('/', array('as' => 'screen', 'uses' => 'ScreenController@index'));
+        Route::any('new', array('as' => 'screen-add', 'uses' => 'ScreenController@anyAdd'));
+        Route::any('edit/{id}', array('as' => 'screen-edit', 'uses' => 'ScreenController@anyEdit'));
+        Route::get('delete/{id}', array('as' => 'screen-delete', 'uses' => 'ScreenController@delete'));
+    });
 });

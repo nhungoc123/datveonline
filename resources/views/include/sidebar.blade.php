@@ -33,6 +33,12 @@
                     <i class="fa fa-clock-o"></i> <span>Performance</span>
                 </a>
             </li>
+
+            <li>
+                <a href="{{route('screen')}}">
+                    <i class="fa fa-picture-o"></i> <span>Screen</span>
+                </a>
+            </li>
         </ul>
     </section> 
 </aside>

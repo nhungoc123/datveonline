@@ -10,7 +10,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li>Movie</li>
+        <li> <a href="{{route('movie')}}"><i class="fa fa-film"></i>Movie</a></li>
         <li class="active">Add</li>
       </ol>
     </section>
@@ -28,23 +28,23 @@
                     {!! Form::label('Tên phim', null, 
                         array('class' => 'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                    <span class="help-block">{!! $errors->first('name') !!}</span>
                     {!! Form::text('name', Input::old('name'), 
                         array('required', 
                             'maxlength' => 50,
                             'class'=>'form-control', 
                             'placeholder'=>'Tên phim')) !!}
+                    <span class="help-block">{!! $errors->first('name') !!}</span>
                     </div>
                 </div>
                 <div class="form-group @if($errors->has('genre')) has-error @endif">
                     {!! Form::label('Thể loại', null, 
                         array('class' => 'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                    <span class="help-block">{!! $errors->first('genre') !!}</span>
                     {!! Form::text('genre', Input::old('genre'),
                         array('required',
                             'class'=>'form-control',
                             'placeholder'=>'Hành động, kinh dị, ...')) !!}
+                    <span class="help-block">{!! $errors->first('genre') !!}</span>
                     </div>
                 </div>
 
@@ -52,12 +52,12 @@
                     {!! Form::label('Mô tả', null, 
                         array('class' => 'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                    <span class="help-block">{!! $errors->first('decription') !!}</span>
                     {!! Form::textarea('decription', Input::old('decription'), 
                         array('required',
                             'maxlength' => 100,
                             'class'=>'form-control', 
                             'placeholder'=>'Mô tả cho bộ phim')) !!}
+                    <span class="help-block">{!! $errors->first('decription') !!}</span>
                     </div>
                 </div>
 
@@ -65,35 +65,34 @@
                     {!! Form::label('Diển viên', null, 
                         array('class' => 'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                    <span class="help-block">{!! $errors->first('actor') !!}</span>
                     {!! Form::text('actor', Input::old('actor'), 
                         array('required',
                             'maxlength' => 100,
                             'class'=>'form-control', 
                             'placeholder'=>'Thành Long, Lưu Diệc Phi, ...')) !!}
+                    <span class="help-block">{!! $errors->first('actor') !!}</span>
                     </div>
                 </div>
                 <div class="form-group @if($errors->has('year')) has-error @endif">
                     {!! Form::label('Năm sản xuất', null, 
                         array('class' => 'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                    <span class="help-block">{!! $errors->first('year') !!}</span>
-
                     {!! Form::text('year', Input::old('year'), 
                         array( 
                         'class'=>'form-control', 
                         'placeholder'=>'2016')) !!}
+                    <span class="help-block">{!! $errors->first('year') !!}</span>
                     </div>
                 </div>
                 <div class="form-group @if($errors->has('durations')) has-error @endif">
                     {!! Form::label('Thời gian phim', null, 
                         array('class' => 'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                    <span class="help-block">{!! $errors->first('durations') !!}</span>
                     {!! Form::text('durations', Input::old('durations'), 
                         array('required', 
                         'class'=>'form-control', 
                         'placeholder'=>'100 phút')) !!}
+                    <span class="help-block">{!! $errors->first('durations') !!}</span>
                     </div>
                 </div>
 
@@ -101,11 +100,11 @@
                     {!! Form::label('Trailer phim', null, 
                         array('class' => 'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                    <span class="help-block">{!! $errors->first('trailer') !!}</span>
                     {!! Form::text('trailer', Input::old('trailer'), 
                         array(
                         'class'=>'form-control', 
                         'placeholder'=>'http://')) !!}
+                    <span class="help-block">{!! $errors->first('trailer') !!}</span>
                     </div>
                 </div>
 

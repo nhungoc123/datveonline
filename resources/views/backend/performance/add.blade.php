@@ -13,7 +13,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="{{route('performance')}}"><i class="fa fa-clock-o"></i> Performance</a></li></li>
+        <li><a href="{{route('performance')}}"><i class="fa fa-clock-o"></i> Performance</a></li>
         <li class="active">Add</li>
       </ol>
     </section>
