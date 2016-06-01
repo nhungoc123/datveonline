@@ -32,10 +32,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'backend', 'middleware' => 'au
 
     Route::group(['prefix' => 'movie'], function() {
     	Route::get('/', array('as' => 'movie', 'uses' => 'MovieController@index'));
+        Route::any('new', array('as' => 'movie-add', 'uses' => 'MovieController@anyAdd'));
 	    Route::any('edit/{id}', array('as' => 'movie-edit', 'uses' => 'MovieController@anyEdit'));
-	    
-	    Route::any('new', array('as' => 'movie-add', 'uses' => 'MovieController@anyAdd'));	
+        Route::get('delete/{id}', array('as' => 'movie-delete', 'uses' => 'MovieController@delete'));
     });
 
-    
+    Route::group(['prefix' => 'performance'], function() {
+        Route::get('/', array('as' => 'performance', 'uses' => 'PerformanceController@index'));
+        Route::any('new', array('as' => 'performance-add', 'uses' => 'PerformanceController@anyAdd'));
+        Route::any('edit/{id}', array('as' => 'performance-edit', 'uses' => 'PerformanceController@anyEdit'));
+        Route::get('delete/{id}', array('as' => 'performance-delete', 'uses' => 'PerformanceController@delete'));
+    });
 });

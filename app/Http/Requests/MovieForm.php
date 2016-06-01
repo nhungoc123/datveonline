@@ -9,36 +9,28 @@ class MovieForm extends Request
      */
     public function rules()
     {
+        $arrRet = [];
         switch($this->method())
         {
             case 'GET':
-                return array();
                 break;
                 
             case 'POST':
-                return [
+                $arrRet = [
                     'name' => 'required|max:50',
                     'genre' => 'required|max:100',
                     'decription' => 'required|max:2000',
                     'actor' => 'required|max:100',
                     'year' => 'numeric|digits:4',
                     'durations' => 'required|numeric',
-                    'trailer' => 'max:2000'
+                    'trailer' => 'url|max:2000'
                 ];
                 break;
             
             default:
                 break;
         }
-        // return [
-        //     'name' => 'required|max:50',
-        //     'genre' => 'required|max:100',
-        //     'decription' => 'required|max:2000',
-        //     'actor' => 'required|max:100',
-        //     'year' => 'numeric|digits:4',
-        //     'durations' => 'required|numeric',
-        //     'trailer' => 'max:2000'
-        // ];
+        return $arrRet;
     }
 
     /**

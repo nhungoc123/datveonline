@@ -33,13 +33,13 @@ class MovieController extends Controller {
 	 */
 	public function anyEdit($id, Movie $movie, MovieForm $MovieForm)
 	{
-		$form = Movie::find($id);
+		$form = Movie::findOrFail($id);
 
 		if (\Request::method() == 'POST') {
 			$form->fill(\Request::all());
 			$form->save();
 			return redirect()->route('movie')
-            ->with('flg', 'Successfull!');
+            ->with('message', 'Edit Successfull!');
 		}
 	    return view('backend.movie.edit',
 	    	[
@@ -60,12 +60,21 @@ class MovieController extends Controller {
 			$movie->fill(\Request::all());
 			$movie->save();
 			return redirect()->route('movie')
-            ->with('flg', 'Successfull!');
+            ->with('message', 'Add Successfull!');
 		}
-		// dd($request);
-		// if ($request->isMethod('post')) {
-
-		// }
 	    return view('backend.movie.add');
+	}
+
+	/**
+	 * Show the movie page.
+	 *
+	 * @return Response
+	 */
+	public function delete($id, Movie $movie, MovieForm $MovieForm)
+	{
+		$movie = Movie::findOrFail($id);
+		$movie->delete();
+	    return redirect()->route('movie')
+            ->with('message', 'Delete Successfull!');
 	}
 }
