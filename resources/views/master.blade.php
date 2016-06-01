@@ -113,7 +113,7 @@
 
 	<script type="text/javascript">
 	// auto close alert success
-		$(".alert-success").fadeTo(2000, 500).slideUp(500, function(){
+		$(".alert-success").fadeTo(5000, 500).slideUp(500, function(){
 		    $(".alert-success").alert('close');
 		});
 	</script>
