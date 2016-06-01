@@ -16,16 +16,21 @@
 
     <!-- Main content -->
     <section class="content">
+    @if(Session::has('message'))
+        <div class="alert {{ Session::get('alert-class', 'alert-success') }} alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-check"></i> Alert!</h4>
+            {{ Session::get('message') }}
+        </div>
+    @endif
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-            <div class="col-xs-2">
-                <a href="{!! route('movie-add') !!}">
-                <button type="button" class="btn btn-block btn-success">Add new</button></a>
-            </div>
-                
-              {{-- <h3 class="box-title">Data Table With Full Features</h3> --}}
+              <div class="col-xs-2">
+                  <a href="{!! route('movie-add') !!}">
+                  <button type="button" class="btn btn-block btn-success">Add new</button></a>
+              </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -75,7 +80,7 @@
                             <a href="{!! route('movie-edit', $movie->id) !!}" class="btn btn-primary btn-xs">
                                 <i class="fa fa-edit"></i> Edit
                             </a>
-                            <a class="btn btn-danger btn-xs">
+                            <a href="{!! route('movie-delete', $movie->id) !!}" class="btn btn-danger btn-xs">
                                 <i class="fa fa-remove"></i> Delete
                             </a>
                         </td>

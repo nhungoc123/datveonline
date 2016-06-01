@@ -6,19 +6,19 @@
     <section class="content-header">
       <h1>
         Quản lý phim
-        <small>Film Add</small>
+        <small>Film Edit</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
         <li>Movie</li>
-        <li class="active">Add</li>
+        <li class="active">Edit</li>
       </ol>
     </section>
     <section class="content">
     <div class="col-xs-12">
         <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Movie Add</h3>
+              <h3 class="box-title">Movie Edit</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -127,5 +127,4 @@
 
 @section('script')
 
-</script>
 @endsection
