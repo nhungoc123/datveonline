@@ -196,7 +196,7 @@ return [
 
 		'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
-
+        'Helper'    => 'App\Utils\Helper\HelperFacade'
 	],
 
 ];

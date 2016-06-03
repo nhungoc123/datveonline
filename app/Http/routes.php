@@ -50,4 +50,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'backend', 'middleware' => 'au
         Route::any('edit/{id}', array('as' => 'screen-edit', 'uses' => 'ScreenController@anyEdit'));
         Route::get('delete/{id}', array('as' => 'screen-delete', 'uses' => 'ScreenController@delete'));
     });
+
+    Route::group(['prefix' => 'seat'], function() {
+        Route::any('/', array('as' => 'seat', 'uses' => 'SeatController@index'));
+        
+        Route::post('/seat/{screen}', array('as' => 'ajax-get-seat', 'uses' => 'SeatController@ajaxGetSeat'));
+
+        Route::any('new', array('as' => 'seat-add', 'uses' => 'SeatController@anyAdd'));
+        Route::any('edit/{id}', array('as' => 'seat-edit', 'uses' => 'SeatController@anyEdit'));
+        Route::get('delete/{id}', array('as' => 'seat-delete', 'uses' => 'SeatController@delete'));
+    });
 });

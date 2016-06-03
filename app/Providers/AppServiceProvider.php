@@ -1,6 +1,7 @@
 <?php namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Utils\Helper\Helper;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -25,10 +26,13 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bind(
-			'Illuminate\Contracts\Auth\Registrar',
-			'App\Services\Registrar'
-		);
+		// $this->app->bind(
+		// 	'Illuminate\Contracts\Auth\Registrar',
+		// 	'App\Services\Registrar'
+		// );
+		\App::bind('helper', function () {
+            return new Helper();
+        });
 	}
 
 }

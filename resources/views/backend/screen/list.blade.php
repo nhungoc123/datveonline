@@ -41,6 +41,7 @@
                   <th>Name</th>
                   <th>Description</th>
                   <th>Total seat</th>
+                  <th>Seat in row</th>
                   <th>Admin</th>
                 </tr>
                 </thead>
@@ -61,6 +62,9 @@
                             {{$data->total_seat}}
                         </td>
                         <td>
+                            {{$data->seat_in_row}}
+                        </td>
+                        <td>
                             <a href="{!! route('screen-edit', $data->id) !!}" class="btn btn-primary btn-xs">
                                 <i class="fa fa-edit"></i> Edit
                             </a>
@@ -78,6 +82,7 @@
                   <th>Name</th>
                   <th>Description</th>
                   <th>Total seat</th>
+                  <th>Seat in row</th>
                   <th>Admin</th>
                 </tr>
                 </tfoot>

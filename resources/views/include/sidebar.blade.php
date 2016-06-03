@@ -39,6 +39,13 @@
                     <i class="fa fa-picture-o"></i> <span>Screen</span>
                 </a>
             </li>
+
+            <li>
+                <a href="{{route('seat')}}">
+                    <i class="fa fa-hotel"></i> <span>Seat</span>
+                </a>
+            </li>
+
         </ul>
     </section> 
 </aside>

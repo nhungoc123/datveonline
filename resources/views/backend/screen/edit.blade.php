@@ -66,6 +66,19 @@
                     </div>
                 </div>
 
+                <div class="form-group @if($errors->has('seat_in_row')) has-error @endif">
+                    {!! Form::label('Số ghế trên một hàng', null, 
+                        array('class' => 'col-sm-2 control-label')) !!}
+                    <div class="col-sm-10">
+                    {!! Form::text('seat_in_row', Input::old('seat_in_row'),
+                        array( 
+                        'class'=>'form-control', 
+                        'placeholder'=>'10')) !!}
+                    <span class="help-block">{!! $errors->first('seat_in_row') !!}</span>
+
+                    </div>
+                </div>
+
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
